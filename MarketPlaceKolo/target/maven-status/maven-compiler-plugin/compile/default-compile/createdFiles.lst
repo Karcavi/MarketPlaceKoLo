@@ -1,0 +1,8 @@
+co\konrad\marketplacekolo\persistence\CiudadPersistence.class
+co\konrad\marketplacekolo\persistence\CategoriaPersistence.class
+co\konrad\marketplacekolo\entities\CategoriaEntity.class
+co\konrad\marketplacekolo\entities\CiudadEntity.class
+co\konrad\marketplacekolo\entities\ProveedorEntity.class
+co\konrad\marketplacekolo\persistence\PaisPersistence.class
+co\konrad\marketplacekolo\entities\PaisEntity.class
+co\konrad\marketplacekolo\persistence\ProveedorPersistence.class
