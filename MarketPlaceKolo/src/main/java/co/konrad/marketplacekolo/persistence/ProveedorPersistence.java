@@ -22,7 +22,7 @@ public class ProveedorPersistence {
      * @param id
      * @return Proveedor *
      */
-    private ProveedorEntity find(Long id) {
+    public ProveedorEntity find(Long id) {
         ProveedorEntity proveedor = em.find(ProveedorEntity.class, id);
         return proveedor;
     }
@@ -33,7 +33,7 @@ public class ProveedorPersistence {
      * @return listado de datos de la tabla
      *
      */
-    private List<ProveedorEntity> findAll() {
+    public List<ProveedorEntity> findAll() {
         Query todos = em.createQuery("select u from ProveedorEntity u");
         return todos.getResultList();
     }
@@ -45,7 +45,7 @@ public class ProveedorPersistence {
      * @return proveedor
      *
      */
-    private ProveedorEntity create(ProveedorEntity proveedor) {
+    public ProveedorEntity create(ProveedorEntity proveedor) {
         em.persist(proveedor);
         return proveedor;
     }
@@ -65,7 +65,7 @@ public class ProveedorPersistence {
      * @param id
      * @return proveedorDelete*
      */
-    private void delete(Long id) {
+    public void delete(Long id) {
         ProveedorEntity proveedorDelete = em.find(ProveedorEntity.class, id);
         em.remove(proveedorDelete);
     }

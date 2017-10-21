@@ -13,18 +13,18 @@ import javax.persistence.Id;
  * @author karcavi
  */
 @Entity
-public class TipoTarjetaEntity implements Serializable {
+public class TipoPagoEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "idTipoTarjeta", unique = true)
+    @Column(name = "idTipo", unique = true)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    /*ID del tipo de tarjeta*/
+     /*ID del Tipo de Pago*/
     private Long id;
 
-    @Column(name = "tipoTarjeta")
-    /*Tipo de tarjeta*/
-    private String tipoTarjeta;
+    @Column(name = "tipoPago")
+    /*Tipo de Pago*/
+    private String tipo;
 
     public Long getId() {
         return id;
@@ -34,16 +34,14 @@ public class TipoTarjetaEntity implements Serializable {
         this.id = id;
     }
 
-    public String getTipoTarjeta() {
-        return tipoTarjeta;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoTarjeta(String tipoTarjeta) {
-        this.tipoTarjeta = tipoTarjeta;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     
-    
 
-    
 }

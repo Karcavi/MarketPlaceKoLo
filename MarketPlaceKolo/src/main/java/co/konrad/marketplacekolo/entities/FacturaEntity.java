@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.konrad.marketplacekolo.entities;
 
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -20,9 +19,6 @@ public class FacturaEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @Column(name = "idFactura", unique = true)
     @GeneratedValue(strategy = GenerationType.AUTO)
     /*ID de la factura*/
@@ -30,7 +26,7 @@ public class FacturaEntity implements Serializable {
 
     @Column(name = "fechaCompra")
     /*Fecha en que se realiza la compra*/
-    private date fecha;
+    private Date fecha;
    
      @Column(name = "productosCompra")
     /*Productos de la lista*/
@@ -44,12 +40,12 @@ public class FacturaEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idTarjeta")
     /*Relacion uno a muchos con la tabla Tarjeta*/
-    private TarjetaEntity tarjeta;
+    private TarjetaDCEntity tarjeta;
     
     @ManyToOne
-    @JoinColumn(name = "idTipoTarjeta")
+    @JoinColumn(name = "idTipo")
     /*Relacion uno a muchos con la tabla tipoTarjeta*/
-    private TipoTarjeta tipoTarjeta;
+    private TipoPagoEntity idTipo;
 
     public Long getId() {
         return id;
@@ -59,11 +55,11 @@ public class FacturaEntity implements Serializable {
         this.id = id;
     }
 
-    public date getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(date fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -83,22 +79,21 @@ public class FacturaEntity implements Serializable {
         this.precioTotal = precioTotal;
     }
 
-    public TarjetaEntity getTarjeta() {
+    public TarjetaDCEntity getTarjeta() {
         return tarjeta;
     }
 
-    public void setTarjeta(TarjetaEntity tarjeta) {
+    public void setTarjeta(TarjetaDCEntity tarjeta) {
         this.tarjeta = tarjeta;
     }
 
-    public TipoTarjeta getTipoTarjeta() {
-        return tipoTarjeta;
+    public TipoPagoEntity getIdTipo() {
+        return idTipo;
     }
 
-    public void setTipoTarjeta(TipoTarjeta tipoTarjeta) {
-        this.tipoTarjeta = tipoTarjeta;
+    public void setIdTipo(TipoPagoEntity idTipo) {
+        this.idTipo = idTipo;
     }
+
     
-     
-     
 }
