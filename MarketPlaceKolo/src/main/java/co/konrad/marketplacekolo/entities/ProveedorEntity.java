@@ -1,7 +1,3 @@
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.konrad.marketplacekolo.entities;
 
 import java.io.Serializable;
@@ -47,15 +43,15 @@ public class ProveedorEntity implements Serializable {
     private int reputacion;
 
     @Column(name = "numeroTelefono")
-    /*Duración en días del festival*/
+    /*Número de teléfono del proveedor*/
     private int telefono;
 
     @Column(name = "urlChat")
-    /*Duración en días del festival*/
+    /*Dirección URL del chat*/
     private String urlChat;
 
     @Column(name = "direccionAtencion")
-    /*Duración en días del festival*/
+    /*Dirección de centro de atención del proveedor*/
     private String direccion;
 
     @ManyToOne
