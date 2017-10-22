@@ -69,4 +69,8 @@ public class ProveedorPersistence {
         ProveedorEntity proveedorDelete = em.find(ProveedorEntity.class, id);
         em.remove(proveedorDelete);
     }
+
+    public ProveedorEntity update(ProveedorEntity entity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

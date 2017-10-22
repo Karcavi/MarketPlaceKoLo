@@ -63,7 +63,7 @@ public class ProveedorResource {
     }
     
      @DELETE
-    @Path("{festivalId: \\d+}")
+    @Path("{proveedorId: \\d+}")
     public void deleteProveedor(@PathParam("proveedorId") Long id){
         ProveedorEntity entity = proveedorLogic.getProveedor(id);
         if(entity == null){

@@ -9,10 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-/**
- *
- * @author IAN
- */
+/*@author IAN*/
 @Entity
 public class ProveedorEntity implements Serializable {
 

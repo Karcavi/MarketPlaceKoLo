@@ -24,7 +24,7 @@ public class ProductoPersistence {
      * @param id
      * @return producto *
      */
-    private ProductoEntity find(Long id) {
+    public ProductoEntity find(Long id) {
         ProductoEntity producto = em.find(ProductoEntity.class, id);
         return producto;
     }
@@ -35,7 +35,7 @@ public class ProductoPersistence {
      * @return listado de datos de la tabla
      *
      */
-    private List<ProductoEntity> findAll() {
+    public List<ProductoEntity> findAll() {
         Query todos = em.createQuery("select u from ProductoEntity u");
         return todos.getResultList();
     }
@@ -47,7 +47,7 @@ public class ProductoPersistence {
      * @return producto
      *
      */
-    private ProductoEntity create(ProductoEntity producto) {
+    public ProductoEntity create(ProductoEntity producto) {
         em.persist(producto);
         return producto;
     }
@@ -67,8 +67,12 @@ public class ProductoPersistence {
      * @param id
      * @return productoDelete*
      */
-    private void delete(Long id) {
+    public void delete(Long id) {
         ProductoEntity productoDelete = em.find(ProductoEntity.class, id);
         em.remove(productoDelete);
+    }
+
+    public ProductoEntity update(ProductoEntity entity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

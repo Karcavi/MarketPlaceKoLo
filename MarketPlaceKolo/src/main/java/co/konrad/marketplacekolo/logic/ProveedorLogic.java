@@ -7,10 +7,7 @@ import co.konrad.marketplacekolo.entities.ProveedorEntity;
 import java.util.List;
 import javax.inject.Inject;
 
-/**
- *
- * @author karcavi
- */
+/*@author karcavi*/
 
 /*Clase que contiene la logica del Proveedor*/
 @Stateless
@@ -18,7 +15,6 @@ public class ProveedorLogic {
      /*Inyecciòn del persistence de la entidad Proveedor*/
         @Inject
         private ProveedorPersistence proveedorPersistence;
-    
         public List<ProveedorEntity> getProveedores(){
         List<ProveedorEntity> proveedores = proveedorPersistence.findAll();
         return proveedores;

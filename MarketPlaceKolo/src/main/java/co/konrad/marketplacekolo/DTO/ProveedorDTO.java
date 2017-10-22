@@ -1,5 +1,6 @@
 
 package co.konrad.marketplacekolo.DTO;
+import co.konrad.marketplacekolo.entities.CiudadEntity;
 import co.konrad.marketplacekolo.entities.ProveedorEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +40,8 @@ public class ProveedorDTO {
 /*Dirección de atención del proveedor*/
     private String direccion;
 
-/*Relacion uno a muchos con la tabla Ciudad
-    private CiudadEntity ciudad;*/
+/*Relacion uno a muchos con la tabla Ciudad*/
+    private CiudadEntity ciudad;
 
     
     public ProveedorDTO(){
