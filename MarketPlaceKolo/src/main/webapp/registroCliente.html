@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cine Konradista</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+         <script src="./js/vendor/jquery-2.2.4.js"></script>
+        
+    </head>
+    <body>
+       
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class = "navbar-header">
+                    
+                    <a href="#">CRUD Festival</a>
+                </div>
+            </div>
+            
+            <div class="colapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Volver</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+        
+        
+        <nav>
+            <div>
+                <div>
+                    <button type="button"></button>
+                    <a href="#">CRUD Festival</a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Crear</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        
+        <div>
+            
+            <div class="form-group">
+                <label class="control-label">Nombre del Festival</label>
+                <input class="form-control" id ="nombre" type= "text" placeholder="Ingresar Nombre del Festival">
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Duraci&oacute;n en d&iacute;as</label>
+                <input class="form-control" id ="duracionDias" type="text" placeholder="Ingresar duración del festival">
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Patrocinador</label>
+                <input class="form-control" id ="patrocinador" type="text" placeholder="Ingresar Nombre del Festival">
+            </div>
+            
+            <button id="crearButton" class="btn btn-default" >Crear Festival</button>
+        </div>
+        <script src="./js/crearFestival.js"></script>
+    </body>
+</html>

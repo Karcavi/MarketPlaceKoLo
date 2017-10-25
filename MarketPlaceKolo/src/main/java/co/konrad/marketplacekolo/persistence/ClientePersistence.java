@@ -3,71 +3,71 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.konrad.marketplacekolo.persistence;
+package co.konrad.cinekonradista.persistence;
 
-import co.konrad.marketplacekolo.entities.ClienteEntity;
+import co.konrad.cinekonradista.entities.ClienteEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- *
- * @author David
+ * Manejador de la entidad cliente
+ * @author Sebastián Méndez Garzón
  */
+
 public class ClientePersistence {
-     @PersistenceContext(unitName = "MarketPlaceKoloPU")
+    
+       @PersistenceContext(unitName = "KoloPU")
     protected EntityManager em;
-     /**
-     * Método para encontrar un objeto de la clase cliente a través de un id
+
+    /**
+     * Metodo para encontrar objeto en la tabla Cliente
      *
-     * @param id
-     * @return cliente *
+     * @return Cliente
      */
-    private ClienteEntity find(Long id) {
+    public ClienteEntity find(Long id) {
         ClienteEntity cliente = em.find(ClienteEntity.class, id);
         return cliente;
     }
 
     /**
-     * Obtener todos los objetos encontrados en la tabla cliente
+     * Obtener Lista con los datos de tabla Festival
      *
-     * @return listado de datos de la tabla
-     *
+     * @return lista de datos de la tabla festival
      */
-    private List<ClienteEntity> findAll() {
+    public List<ClienteEntity> findAll() {
         Query todos = em.createQuery("select u from ClienteEntity u");
         return todos.getResultList();
     }
 
     /**
-     * Creación de un nuevo registro
+     * Creacion de un nuevo cliente
      *
      * @param cliente
-     * @return cliente
-     *
+     * @return nuevo cliente
      */
-    private ClienteEntity create(ClienteEntity cliente) {
+    public ClienteEntity create(ClienteEntity cliente) {
         em.persist(cliente);
         return cliente;
     }
 
-    /*Actualización de la entidad
-        @param 
-        @return clienteUpdate*/
-    private ClienteEntity update(Long id) {
-        ClienteEntity clienteUpdate = em.find(ClienteEntity.class, id);
-        em.merge(clienteUpdate);
-        return clienteUpdate;
+    /**
+     * Actualizacion del update
+     *
+     * @param entity
+     * @return merge entity
+     */
+    public ClienteEntity update(ClienteEntity entity) {
+        return em.merge(entity);
     }
 
     /**
-     * Eliminar un objeto de la entidad proveedor
+     * Elimina el objeto de la tabla
      *
      * @param id
-     * @return clienteDelete*
      */
-    private void delete(Long id) {
+    public void delete(Long id) {
         ClienteEntity clienteDelete = em.find(ClienteEntity.class, id);
         em.remove(clienteDelete);
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.konrad.marketplacekolo.entities;
+package co.konrad.cinekonradista.entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -11,65 +11,65 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 /**
  *
- * @author David
+ * @author Sebastián Méndez Garzón
  */
 @Entity
 public class ClienteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "idDocumento", unique = true)
+    @Column(name = "idCliente")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "tipoDocumento")
-    /*Tipo de documento del cliente*/
-    private String tipo_documento;
+    /**
+     * Nombres del cliente
+     */
     @Column(name = "nombresCliente")
-    /*Nombres del cliente*/
     private String nombres;
-    @Column(name = "apellidosClientes")
-    /*Apellidos del cliente*/
-    private String apellidos;
-    @Column(name = "fechaNacimiento")
-    /*Fecha de nacimiento del cliente*/
-    private String fecha_nacimiento;
-    @Column(name = "direccionCliente")
-    /*Direccion del cliente*/
-    private String direccion;
-    @Column(name = "numeroTelefono")
-    /*Numero de telefono del cliente*/
-    private String telefono;
-    @Column(name = "correoCliente")
-    /*Correo del cliente*/
-    private String correo;
-    @Column(name = "claveCliente")
-    /*Clave del cliente*/
-    private String clave;
-    @ManyToOne
-    @JoinColumn(name = "idCiudad")
-    /*Relacion uno a muchos con la tabla Ciudad*/
-    private CiudadEntity ciudad;
 
+    /**
+     * Apellidos del cliente
+     */
+    @Column(name = "apellidosCliente")
+    private String apellidos;
+
+    /**
+     * # telefonico del cliente
+     */
+    @Column(name = "telefonoCliente")
+    private int telefono;
+
+    /**
+     * # del documento de identidad del cliente
+     */
+    @Column(name = "documentoCliente")
+    private int documento;
+
+    /**
+     * correo eletronico del cliente
+     */
+    @Column(name = "correoCliente")
+    private String correo;
+
+    /**
+     * clave del cliente
+     */
+    @Column(name = "claveCliente")
+    private String clave;
+    
+    /**
+     * Metodos get y set
+     */
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTipo_documento() {
-        return tipo_documento;
-    }
-
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
     }
 
     public String getNombres() {
@@ -88,28 +88,20 @@ public class ClienteEntity implements Serializable {
         this.apellidos = apellidos;
     }
 
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public int getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(int documento) {
+        this.documento = documento;
     }
 
     public String getCorreo() {
@@ -128,12 +120,4 @@ public class ClienteEntity implements Serializable {
         this.clave = clave;
     }
 
-    public CiudadEntity getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(CiudadEntity ciudad) {
-        this.ciudad = ciudad;
-    }
-    
 }
