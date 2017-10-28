@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MarketPlace KoLo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="./js/vendor/jquery-2.2.4.js"></script>        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><b>MarketPlace KoLo</b></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Clientes<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Proveedores</a></li>
+                        <li><a href="#">Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div>
+            <div class="form-group">
+                <label class="control-label">Nombre del Festival</label>
+                <input class="form-control" id="nombre" type="text" placeholder="Ingresar Nombre del Festival">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Duraci&oacute;n en d&iacute;as</label>
+                <input class="form-control" id="duracionDias" type="text" placeholder="Ingresar Duracion Dias">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Patrocinador</label>
+                <input class="form-control" id="patrocinador"  type="text" placeholder="Ingresar Patrocinador del Festival">
+            </div>
+            
+            <button id="crearButton" class="btn btn-default">Crear Festival</button>
+        </div>
+        
+        <script src="./js/crearFestival.js"></script>
+    </body>
+</html>
