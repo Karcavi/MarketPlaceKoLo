@@ -20,30 +20,43 @@
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var tipoDocumento = $('#tipoDocumento').val(data.idCliente);
-            var nombre = $('#nombre').val(data.nombre);
-            var patrocinador = $('#patrocinador').val(data.patrocinador);
-            var duracionDias = $('#duracionDias').val(data.duracionDias);
-            var id = data.id;
+            var tipoDocumento = $('#tipoDocumento').val(data.documento);   
+            var idCliente = $('#numeroDocumento').val(data.id);
+            var nombres = $('#nombres').val(data.nombres);
+            var apellidos = $('#apellidos').val(data.apellidos);
+            var correo = $('#correo').val(data.correo);
+            var direccion = $('#direccion').val(data.direccion);
+            var telefono = $('#telefono').val(data.telefono);
+            var clave = $('#clave').val(data.clave);
+            
 
-            $('#crearButton').text('Actualizar Festival').click(function (event) {
-                var nombre = $('#nombre').val();
-                var patrocinador = $('#patrocinador').val();
-                var duracionDias = $('#duracionDias').val();
+            $('#crearButton').text('Actualizar Cliente').click(function (event) {
+                var tipoDocumento = $('#tipoDocumento').val();
+                var idCliente = $('#numeroDocumento').val();
+                var nombres = $('#nombres').val();
+                var apellidos = $('#apellidos').val();
+                var correo = $('#correo').val();
+                var direccion = $('#direccion').val();
+                var telefono = $('#telefono').val();
+                var clave = $('#clave').val();                
                 $.ajax({
-                   url: '/Prueba1/api/festivales/'+id,
-                   method: 'PUT',
-                   contentType: 'application/json',
-                   data: JSON.stringify({
-                      nombre: nombre,
-                      patrocinador: patrocinador,
-                      duracionDias: duracionDias,
-                      id: id
-                   }),                   
-                   dataType: 'json'
-                }).done(function(data){
-                    window.location.href = '/Prueba1';
-                }).fail(function(xhr, status, error){
+                    url: '/marketkolo/api/clientes/' + idCliente,
+                    method: 'PUT',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        documento: tipoDocumento,
+                        nombres: nombres,
+                        apellidos: apellidos,
+                        correo: correo,
+                        direccion: direccion,
+                        telefono: telefono,
+                        clave: clave,
+                        id: idCliente
+                    }),
+                    dataType: 'json'
+                }).done(function (data) {
+                    window.location.href = '/marketkolo';
+                }).fail(function (xhr, status, error) {
                     console.log(error);
                 });
             });
@@ -53,22 +66,33 @@
     } else {
         //Codigo de crear
         $('#crearButton').click(function (event) {
-            var nombre = $('#nombre').val();
-            var duracionDias = $('#duracionDias').val();
-            var patrocinador = $('#patrocinador').val();
+            var idCliente = $('#numeroDocumento').val();
+            var tipoDocumento = $('#tipoDocumento').val();            
+            var nombres = $('#nombres').val();
+            var apellidos = $('#apellidos').val();
+            var correo = $('#correo').val();
+            var direccion = $('#direccion').val();
+            var telefono = $('#telefono').val();
+            var clave = $('#clave').val();
 
             $.ajax({
-                url: '/Prueba1/api/festivales',
+                url: '/marketkolo/api/clientes',
                 method: 'POST',
                 data: JSON.stringify({
-                    nombre: nombre,
-                    duracionDias: duracionDias,
-                    patrocinador: patrocinador
+                    
+                    id: idCliente,                    
+                    nombres: nombres,
+                    apellidos: apellidos,
+                    telefono: telefono,
+                    documento: tipoDocumento,
+                    correo: correo,                                       
+                    clave: clave,
+                    direccion: direccion                   
                 }),
                 contentType: 'application/json',
                 dataType: 'json'
             }).done(function (data) {
-                window.location.href = '/Prueba1';
+                window.location.href = '/marketkolo';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

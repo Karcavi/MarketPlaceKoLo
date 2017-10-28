@@ -26,7 +26,7 @@
                // Tipo de atributpo data crea un atributo para el transporte de datos
                // en formato texto y se puede llamar data-"cualquierNombre"
                botonEliminar.text('Eliminar').attr('data-id', data[i].id);
-               var botonActualizar = $('<a href="/marketkolo/festivalCreate.html?id='+ data[i].id +'">').addClass('btn btn-info');
+               var botonActualizar = $('<a href="/marketkolo/crearCliente.html?id='+ data[i].id +'">').addClass('btn btn-info');
                botonActualizar.text('Actualizar');               
                botonEliminar.click(eliminar);               
                acciones.append(botonEliminar);
@@ -53,6 +53,7 @@
            contentType: 'application/json',
            dataType: 'json'
        }).done(function(data){
+           window.location.href = '/marketkolo';
            console.log('Cliente Eliminado');
        }).fail(function(xhr,status, error){
            console.log(error);

@@ -45,7 +45,7 @@ public class ClienteEntity implements Serializable {
      * # del documento de identidad del cliente
      */
     @Column(name = "documentoCliente")
-    private int documento;
+    private String documento;
 
     /**
      * correo eletronico del cliente
@@ -103,11 +103,11 @@ public class ClienteEntity implements Serializable {
         this.telefono = telefono;
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 

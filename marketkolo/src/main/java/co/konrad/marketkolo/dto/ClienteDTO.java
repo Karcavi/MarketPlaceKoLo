@@ -35,7 +35,7 @@ public class ClienteDTO {
     /**
      * Numero del documento del cliente
      */
-    private int documento;
+    private String documento;
     /**
      * Correo del cliente
      */
@@ -54,6 +54,7 @@ public class ClienteDTO {
 
     /**
      * Constructor
+     *
      * @param cliente
      */
     public ClienteDTO(ClienteEntity cliente) {
@@ -89,6 +90,11 @@ public class ClienteDTO {
         return listaClientes;
     }
 
+    /**
+     * Metodos get y set
+     *
+     * @return 
+     */
     public Long getId() {
         return id;
     }
@@ -121,11 +127,11 @@ public class ClienteDTO {
         this.telefono = telefono;
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
@@ -152,10 +158,5 @@ public class ClienteDTO {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-    /**
-     * Metodos get y set
-     * @return 
-     */
-    
+
 }
