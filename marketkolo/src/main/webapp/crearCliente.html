@@ -35,16 +35,17 @@ and open the template in the editor.
             </div>
         </nav>
         <div class="col-md-3"><br><br>
-           <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
+            <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
         </div>
         <div class="col-md-8">
             <center><h2>Formulario Cliente:</h2></center><br>            
-            <div class="form-group">
+            <div class="form-group" id="TiposDocumentos">
                 <label class="control-label">Tipo de documento</label>
-                <input class="form-control" id="tipoDocumento"  type="text" placeholder="Ingresar el tipo del documento de identidad">
+                <select name="idtipoDocumento" id="idtipoDocumento" class="form-control">                       
+                </select>
             </div>
             <div class="form-group">
-                <label class="control-label">Numero de Documento</label>
+                <label class="control-label">Numero de Documento</label>                                                    
                 <input class="form-control" id="numeroDocumento"  type="number" placeholder="Ingresar el número de documento de identidad">
             </div>
             <div class="form-group">
@@ -71,11 +72,12 @@ and open the template in the editor.
                 <label class="control-label">Contraseña</label>
                 <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
             </div>
-            
+
             <center><button id="crearButton" class="btn btn-primary">Crear Cliente</button></center><br><br>
         </div>
         <div class="col-md-1">
         </div>
         <script src="./js/crearCliente.js"></script>
+        <script src="./js/tipodocumento.js"></script>
     </body>
 </html>

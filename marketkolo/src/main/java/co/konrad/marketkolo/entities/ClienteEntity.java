@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -65,6 +62,10 @@ public class ClienteEntity implements Serializable {
     @Column(name = "direccionCliente")
     private String direccion;
     
+    @ManyToOne
+    @JoinColumn(name = "idTipoDocumento")
+    /*Relacion muchos a uno con la tabla TipoDocumento*/
+    private TipoDocumentoEntity idtipoDocumento;
  
 
     public Long getIdCliente() {
@@ -134,6 +135,15 @@ public class ClienteEntity implements Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public TipoDocumentoEntity getIdTipoDocumento() {
+        return idtipoDocumento;
+    }
+
+    public void setIdTipoDocumento(TipoDocumentoEntity idtipoDocumento) {
+        this.idtipoDocumento = idtipoDocumento;
+    }
+    
     
 
 }

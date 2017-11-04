@@ -13,7 +13,7 @@ import javax.inject.Inject;
  */
 @Stateless
 public class ClienteLogic {
-   
+    
     /**
      * Inyección del persistence del cliente
      */

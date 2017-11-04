@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.konrad.marketkolo.dto;
 
 import co.konrad.marketkolo.entities.ClienteEntity;
+import co.konrad.marketkolo.entities.TipoDocumentoEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +44,11 @@ public class ClienteDTO {
      * Dirección del cliente
      */
     private String direccion;
+     /**
+     * Llave foranea
+     */
+    private TipoDocumentoEntity idtipoDocumento;
+    
 
     public ClienteDTO() {
     }
@@ -66,6 +67,8 @@ public class ClienteDTO {
         this.correo = cliente.getCorreo();
         this.clave = cliente.getClave();
         this.direccion = cliente.getDireccion();
+        this.idtipoDocumento = cliente.getIdTipoDocumento();
+        
     }
 
     public ClienteEntity toEntity() {
@@ -78,6 +81,7 @@ public class ClienteDTO {
         cliente.setCorreo(this.correo);
         cliente.setClave(this.clave);
         cliente.setDireccion(this.direccion);
+        cliente.setIdTipoDocumento(this.idtipoDocumento);
 
         return cliente;
     }
@@ -157,6 +161,14 @@ public class ClienteDTO {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public TipoDocumentoEntity getIdTipoDocumento() {
+        return idtipoDocumento;
+    }
+
+    public void setIdTipoDocumento(TipoDocumentoEntity TipoDocumento) {
+        this.idtipoDocumento = TipoDocumento;
     }
 
 }

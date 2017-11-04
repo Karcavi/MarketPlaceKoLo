@@ -20,7 +20,7 @@
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var tipoDocumento = $('#tipoDocumento').val(data.documento);   
+            var idtipoDocumento = $('#idtipoDocumento').val(data.idtipoDocumento);   
             var idCliente = $('#numeroDocumento').val(data.id);
             var nombres = $('#nombres').val(data.nombres);
             var apellidos = $('#apellidos').val(data.apellidos);
@@ -31,7 +31,7 @@
             
 
             $('#crearButton').text('Actualizar Cliente').click(function (event) {
-                var tipoDocumento = $('#tipoDocumento').val();
+                var idtipoDocumento = $('#idtipoDocumento').val();
                 var idCliente = $('#numeroDocumento').val();
                 var nombres = $('#nombres').val();
                 var apellidos = $('#apellidos').val();
@@ -44,7 +44,7 @@
                     method: 'PUT',
                     contentType: 'application/json',
                     data: JSON.stringify({
-                        documento: tipoDocumento,
+                        idtipoDocumento: idtipoDocumento,
                         nombres: nombres,
                         apellidos: apellidos,
                         correo: correo,
@@ -67,7 +67,7 @@
         //Codigo de crear
         $('#crearButton').click(function (event) {
             var idCliente = $('#numeroDocumento').val();
-            var tipoDocumento = $('#tipoDocumento').val();            
+            var idtipoDocumento = $('#idtipoDocumento').val();         
             var nombres = $('#nombres').val();
             var apellidos = $('#apellidos').val();
             var correo = $('#correo').val();
@@ -83,11 +83,11 @@
                     id: idCliente,                    
                     nombres: nombres,
                     apellidos: apellidos,
-                    telefono: telefono,
-                    documento: tipoDocumento,
+                    telefono: telefono,                    
                     correo: correo,                                       
                     clave: clave,
-                    direccion: direccion                   
+                    direccion: direccion,  
+                    idtipoDocumento: idtipoDocumento
                 }),
                 contentType: 'application/json',
                 dataType: 'json'

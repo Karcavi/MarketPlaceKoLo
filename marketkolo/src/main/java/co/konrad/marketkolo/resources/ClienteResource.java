@@ -10,7 +10,6 @@ import co.konrad.marketkolo.entities.ClienteEntity;
 import co.konrad.marketkolo.logic.ClienteLogic;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
