@@ -27,8 +27,8 @@ and open the template in the editor.
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Clientes<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Proveedores</a></li>
+                        <li class="active"><a href="#">Proveedores<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Clientes</a></li>
                         <li><a href="#">Productos</a></li>
                     </ul>
                 </div>
@@ -38,46 +38,42 @@ and open the template in the editor.
             <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
         </div>
         <div class="col-md-8">
-            <center><h2>Formulario Cliente:</h2></center><br>            
-            <div class="form-group" id="TiposDocumentos">
-                <label class="control-label">Tipo de documento</label>
-                <select name="idtipoDocumento" id="idtipoDocumento" class="form-control">
-                </select>
+            <center><h2>Formulario Proveedor:</h2></center><br>            
+            
+            <div class="form-group">
+                <label class="control-label">ID de Proveedor</label>                                                    
+                <input class="form-control" id="numeroDocumento"  type="number" placeholder="Ingresar el número de identificación del proveedor">
             </div>
             <div class="form-group">
-                <label class="control-label">Numero de Documento</label>                                                    
-                <input class="form-control" id="numeroDocumento"  type="number" placeholder="Ingresar el número de documento de identidad">
+                <label class="control-label">Nombre Proveedor</label>
+                <input class="form-control" id="nombre" type="text" placeholder="Ingresa el nombre de proveedor">
             </div>
             <div class="form-group">
-                <label class="control-label">Nombres</label>
-                <input class="form-control" id="nombres" type="text" placeholder="Ingresar tus nombres">
+                <label class="control-label">Ciudad</label>
+                <input class="form-control" id="ciudad" type="text" placeholder="Ingresa la ciudad del proveedor">
             </div>
             <div class="form-group">
-                <label class="control-label">Apellidos</label>
-                <input class="form-control" id="apellidos" type="text" placeholder="Ingresar tus apellidos">
+                <label class="control-label">URL/Ruta de la foto de perfil a usar</label>
+                <input class="form-control" id="rutaFoto"  type="text" placeholder="Ingresar un correo electronico válido">
             </div>
             <div class="form-group">
-                <label class="control-label">Correo</label>
-                <input class="form-control" id="correo"  type="text" placeholder="Ingresar un correo electronico válido">
+                <label class="control-label">Dirección Proveedor</label>
+                <input class="form-control" id="direccion"  type="text" placeholder="Ingresar el teléfono de contacto del proveedor">
             </div>
             <div class="form-group">
-                <label class="control-label">Dirección</label>
-                <input class="form-control" id="direccion"  type="text" placeholder="Ingresar la direccion de tu residencia">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Telefono</label>
-                <input class="form-control" id="telefono"  type="number" placeholder="Ingresar un número telefonico de contacto">
+                <label class="control-label">Teléfono Proveedor</label>
+                <input class="form-control" id="telefono"  type="number" placeholder="Ingresar la dirección del proveedor">
             </div>
             <div class="form-group">
                 <label class="control-label">Contraseña</label>
                 <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
             </div>
 
-            <center><button id="crearButton" class="btn btn-primary">Crear Cliente</button></center><br><br>
+            <center><button id="crearButton" class="btn btn-primary">Crear Proveedor</button></center><br><br>
         </div>
         <div class="col-md-1">
         </div>
-        <script src="./js/crearCliente.js"></script>
-        <script src="./js/tipodocumento.js"></script>
+        <script src="./js/crearProveedor.js"></script>
+<!--        <script src="./js/tipodocumento.js"></script>-->
     </body>
 </html>

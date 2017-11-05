@@ -50,7 +50,7 @@ public class ClientePersistence {
     }
 
     /**
-     * Actualizacion del update
+     * Update
      *
      * @param entity
      * @return merge entity

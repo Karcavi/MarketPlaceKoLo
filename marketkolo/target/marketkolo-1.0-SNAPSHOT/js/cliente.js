@@ -8,7 +8,7 @@
       }).done(function(data){
            for(var i=0; i<data.length; i++){
                var tableRow = $('<tr>');
-               //Td Table divition
+               //Td Table division
                var nombresCliente = $('<td>');
                nombresCliente.text(data[i].nombres);
                var apellidosCliente = $('<td>');
