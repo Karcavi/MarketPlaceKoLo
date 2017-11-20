@@ -44,7 +44,7 @@
                     method: 'PUT',
                     contentType: 'application/json',
                     data: JSON.stringify({
-                        idtipoDocumento: idtipoDocumento,
+                        tipoDocumento: idtipoDocumento,
                         nombres: nombres,
                         apellidos: apellidos,
                         correo: correo,
@@ -61,11 +61,13 @@
                 });
             });
         }).fail(function (xhr, status, error) {
-
+            console.log(error);
         });
     } else {
-        //Codigo de crear
+        //Codigo de crear        
         $('#crearButton').click(function (event) {
+            console.log("Crear");
+            console.log($('#idtipoDocumento').val());
             var idCliente = $('#numeroDocumento').val();
             var idtipoDocumento = $('#idtipoDocumento').val();
             var nombres = $('#nombres').val();
@@ -86,7 +88,7 @@
                     correo: correo,
                     clave: clave,
                     direccion: direccion,
-                    idtipoDocumento: idtipoDocumento
+                    tipoDocumentodto: {idTipoDocumento: idtipoDocumento}
                 }),
                 contentType: 'application/json',
                 dataType: 'json'

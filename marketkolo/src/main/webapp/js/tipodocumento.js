@@ -7,7 +7,7 @@
             dataType: 'json'
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                var nombreTipoDocumento = $('<option value="'+data[i].nomTipoDocumento+'">');
+                var nombreTipoDocumento = $('<option value="'+data[i].idTipoDocumento+'">');
                 nombreTipoDocumento.text(data[i].nomTipoDocumento);
                 $('#TiposDocumentos select').append(nombreTipoDocumento);
             }

@@ -1,11 +1,16 @@
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
@@ -16,56 +21,56 @@ public class ClienteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "idCliente")
-   
+    @Column(name = "id_Cliente")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idCliente;
 
     /**
      * Nombres del cliente
      */
-    @Column(name = "nombresCliente")
+    @Column(name = "nombres_Cliente")
     private String nombres;
 
     /**
      * Apellidos del cliente
      */
-    @Column(name = "apellidosCliente")
+    @Column(name = "apellidos_Cliente")
     private String apellidos;
 
     /**
      * # telefonico del cliente
      */
-    @Column(name = "telefonoCliente")
+    @Column(name = "telefono_Cliente")
     private int telefono;
 
     /**
      * # del documento de identidad del cliente
      */
-    @Column(name = "documentoCliente")
+    @Column(name = "documento_Cliente")
     private String documento;
 
     /**
      * correo eletronico del cliente
      */
-    @Column(name = "correoCliente")
+    @Column(name = "correo_Cliente")
     private String correo;
     
     /**
      * clave del cliente
      */
-    @Column(name = "claveCliente")
+    @Column(name = "clave_Cliente")
     private String clave;
     
         /**
      * dirección del cliente
      */
-    @Column(name = "direccionCliente")
+    @Column(name = "direccion_Cliente")
     private String direccion;
     
-    @ManyToOne
-    @JoinColumn(name = "idTipoDocumento")
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_TipoDocumento", nullable=false, referencedColumnName = "id_TipoDocumento")
     /*Relacion muchos a uno con la tabla TipoDocumento*/
-    private TipoDocumentoEntity idtipoDocumento;
+    private TipoDocumentoEntity tipoDocumento;
  
 
     public Long getIdCliente() {
@@ -136,13 +141,15 @@ public class ClienteEntity implements Serializable {
         this.direccion = direccion;
     }
 
-    public TipoDocumentoEntity getIdTipoDocumento() {
-        return idtipoDocumento;
+    public TipoDocumentoEntity getTipoDocumento() {
+        return tipoDocumento;
     }
 
-    public void setIdTipoDocumento(TipoDocumentoEntity idtipoDocumento) {
-        this.idtipoDocumento = idtipoDocumento;
+    public void setTipoDocumento(TipoDocumentoEntity tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
+
+
     
     
 

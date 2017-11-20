@@ -44,11 +44,10 @@ public class ClienteDTO {
      * Dirección del cliente
      */
     private String direccion;
-     /**
+    /**
      * Llave foranea
      */
-    private TipoDocumentoEntity idtipoDocumento;
-    
+    private TipoDocumentoDTO tipoDocumentodto;
 
     public ClienteDTO() {
     }
@@ -67,8 +66,13 @@ public class ClienteDTO {
         this.correo = cliente.getCorreo();
         this.clave = cliente.getClave();
         this.direccion = cliente.getDireccion();
-        this.idtipoDocumento = cliente.getIdTipoDocumento();
-        
+        if (cliente.getTipoDocumento() != null) {
+            TipoDocumentoEntity tipoDocumento = new TipoDocumentoEntity();
+            tipoDocumento.setIdTipoDocumento(cliente.getTipoDocumento().getIdTipoDocumento());
+            tipoDocumento.setNomTipoDocumento(cliente.getTipoDocumento().getNomTipoDocumento());
+            //this.setTipoDocumentodto(new TipoDocumentoDTO(tipoDocumento));
+            this.tipoDocumentodto = new TipoDocumentoDTO(tipoDocumento);
+        }
     }
 
     public ClienteEntity toEntity() {
@@ -81,7 +85,11 @@ public class ClienteDTO {
         cliente.setCorreo(this.correo);
         cliente.setClave(this.clave);
         cliente.setDireccion(this.direccion);
-        cliente.setIdTipoDocumento(this.idtipoDocumento);
+        if (this.tipoDocumentodto != null) {
+            TipoDocumentoEntity tipoDocumento = new TipoDocumentoEntity();
+            tipoDocumento.setIdTipoDocumento(this.tipoDocumentodto.getIdTipoDocumento());
+            cliente.setTipoDocumento(tipoDocumento);
+        }
 
         return cliente;
     }
@@ -97,7 +105,7 @@ public class ClienteDTO {
     /**
      * Metodos get y set
      *
-     * @return 
+     * @return
      */
     public Long getId() {
         return id;
@@ -163,12 +171,12 @@ public class ClienteDTO {
         this.direccion = direccion;
     }
 
-    public TipoDocumentoEntity getIdTipoDocumento() {
-        return idtipoDocumento;
+    public TipoDocumentoDTO getTipoDocumentodto() {
+        return tipoDocumentodto;
     }
 
-    public void setIdTipoDocumento(TipoDocumentoEntity TipoDocumento) {
-        this.idtipoDocumento = TipoDocumento;
+    public void setTipoDocumentodto(TipoDocumentoDTO tipoDocumentodto) {
+        this.tipoDocumentodto = tipoDocumentodto;
     }
 
 }
