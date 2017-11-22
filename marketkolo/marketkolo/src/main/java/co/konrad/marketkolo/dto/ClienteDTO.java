@@ -25,7 +25,7 @@ public class ClienteDTO {
      */
     private String apellidos;
     /**
-     * Numero telefonocio del cliente
+     * Numero telefónico del cliente
      */
     private int telefono;
     /**

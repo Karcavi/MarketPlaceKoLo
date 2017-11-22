@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
@@ -25,17 +21,17 @@ public class PromocionEntity implements Serializable {
     private Long idPromocion;
 
     /**
-     * correo eletronico del cliente
+     * Precio de la oferta
      */
     @Column(name = "precio_Oferta")
     private int precioOferta;
     /**
-     * correo eletronico del cliente
+     * Fecha de inicio de la promociòn
      */
     @Column(name = "fecha_Inicio")
     private String fechaInicio;
     /**
-     * correo eletronico del cliente
+     * Fecha de finalización de la promoción
      */
     @Column(name = "fecha_Fin")
     private String fechaFin;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
@@ -49,7 +44,7 @@ public class ProductoEntity implements Serializable {
     @Column(name = "garantia_Producto")
     private String garantiaProducto;
     /**
-     * Stock del Prodcuto en venta
+     * Stock del Producto en venta
      */
     @Column(name = "stock_Producto")
     private int stockProducto;
