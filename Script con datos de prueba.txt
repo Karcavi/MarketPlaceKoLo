@@ -1,0 +1,7 @@
+***********DATOS DE TABLA TIPODEDOCUMENTO:***********
+
+INSERT INTO APP.TIPODOCUMENTOENTITY (ID_TIPODOCUMENTO, NOM_TIPODOCUMENTO) VALUES 
+(1, 'Cédula de ciudadanía'),
+(2, 'Cédula de extranjería')
+
+----------------------------------------------------------
