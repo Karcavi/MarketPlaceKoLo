@@ -4,6 +4,17 @@
     <jta-data-source>java:app/koloBD</jta-data-source>
     <class>co.konrad.marketkolo.entities.ClienteEntity</class>
     <class>co.konrad.marketkolo.entities.TipoDocumentoEntity</class>
+    <class>co.konrad.marketkolo.entities.BancoEntity</class>
+    <class>co.konrad.marketkolo.entities.CarritoEntity</class>
+    <class>co.konrad.marketkolo.entities.CarritoProductoEntity</class>
+    <class>co.konrad.marketkolo.entities.CategoriaEntity</class>
+    <class>co.konrad.marketkolo.entities.Factura</class>
+    <class>co.konrad.marketkolo.entities.FranquiciaEntity</class>
+    <class>co.konrad.marketkolo.entities.ProductoEntity</class>
+    <class>co.konrad.marketkolo.entities.PromocionEntity</class>
+    <class>co.konrad.marketkolo.entities.ProveedorEntity</class>
+    <class>co.konrad.marketkolo.entities.TipoPagoEntity</class>
+    <class>co.konrad.marketkolo.entities.ValoracionProducto</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
