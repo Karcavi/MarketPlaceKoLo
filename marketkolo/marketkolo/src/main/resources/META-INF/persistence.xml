@@ -8,16 +8,16 @@
     <class>co.konrad.marketkolo.entities.CarritoEntity</class>
     <class>co.konrad.marketkolo.entities.CarritoProductoEntity</class>
     <class>co.konrad.marketkolo.entities.CategoriaEntity</class>
-    <class>co.konrad.marketkolo.entities.Factura</class>
     <class>co.konrad.marketkolo.entities.FranquiciaEntity</class>
     <class>co.konrad.marketkolo.entities.ProductoEntity</class>
     <class>co.konrad.marketkolo.entities.PromocionEntity</class>
     <class>co.konrad.marketkolo.entities.ProveedorEntity</class>
     <class>co.konrad.marketkolo.entities.TipoPagoEntity</class>
-    <class>co.konrad.marketkolo.entities.ValoracionProducto</class>
+    <class>co.konrad.marketkolo.entities.ValoracionProductoEntity</class>
+    <class>co.konrad.marketkolo.entities.FacturaEntity</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

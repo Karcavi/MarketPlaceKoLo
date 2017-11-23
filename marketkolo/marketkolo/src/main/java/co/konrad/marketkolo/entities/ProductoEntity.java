@@ -6,11 +6,15 @@
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -54,6 +58,21 @@ public class ProductoEntity implements Serializable {
      */
     @Column(name = "imagen_Producto")
     private String imagenProducto;
+    
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_Proveedor", nullable = false, referencedColumnName = "idProveedor")
+    /*Relacion muchos a uno con la tabla Proveedor*/
+    private ProveedorEntity proveedor;
+    
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_Categoria", nullable = false, referencedColumnName = "idCategoria")
+    /*Relacion muchos a uno con la tabla Categoria*/
+    private CategoriaEntity categoria;
+    
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_Promocion", nullable = false, referencedColumnName = "idPromocion")
+    /*Relacion muchos a uno con la tabla Promocion*/
+    private PromocionEntity promocion;
 
     public Long getIdProducto() {
         return idProducto;
@@ -109,6 +128,22 @@ public class ProductoEntity implements Serializable {
 
     public void setImagenProducto(String imagenProducto) {
         this.imagenProducto = imagenProducto;
+    }
+
+    public ProveedorEntity getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(ProveedorEntity proveedor) {
+        this.proveedor = proveedor;
+    }
+
+    public CategoriaEntity getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaEntity categoria) {
+        this.categoria = categoria;
     }
     
     

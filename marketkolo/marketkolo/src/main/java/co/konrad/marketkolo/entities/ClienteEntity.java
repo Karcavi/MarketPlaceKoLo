@@ -54,34 +54,34 @@ public class ClienteEntity implements Serializable {
      */
     @Column(name = "correo_Cliente")
     private String correo;
-    
+
     /**
      * clave del cliente
      */
     @Column(name = "clave_Cliente")
     private String clave;
-    
-        /**
+
+    /**
      * dirección del cliente
      */
     @Column(name = "direccion_Cliente")
     private String direccion;
-    
+
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_TipoDocumento", nullable=false, referencedColumnName = "id_TipoDocumento")
+    @JoinColumn(name = "id_TipoDocumento", nullable = false, referencedColumnName = "id_TipoDocumento")
     /*Relacion muchos a uno con la tabla TipoDocumento*/
     private TipoDocumentoEntity tipoDocumento;
- 
 
     public Long getIdCliente() {
         return idCliente;
     }
 
     /**
-     *  Metodos get y set     
+     * Metodos get y set
+     *
      * @param idCliente
      */
-    public void setIdCliente(Long idCliente) { 
+    public void setIdCliente(Long idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -148,9 +148,5 @@ public class ClienteEntity implements Serializable {
     public void setTipoDocumento(TipoDocumentoEntity tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
-
-
-    
-    
 
 }

@@ -6,18 +6,22 @@
 package co.konrad.marketkolo.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author IAN
  */
 @Entity
-public class Factura implements Serializable {
+public class FacturaEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -27,9 +31,10 @@ public class Factura implements Serializable {
     /**
      * Nombre del Danco para la tarjeta Debito
      */
-    @Column(name = "nombre Banco_Debito")
+    @Column(name = "nombre_Banco_Debito")
     private String nomBancoDebito;
-     /**
+
+    /**
      * Numero de cuenta para la tarjeta Debito
      */
     @Column(name = "numero_Cuenta_Debito")
@@ -43,7 +48,7 @@ public class Factura implements Serializable {
      * Precio total a pagar
      */
     @Column(name = "precio_Total")
-    private int precioTotal;   
+    private int precioTotal;
     /**
      * Nombre de la Franquicia para la tarjeta Credito
      */
@@ -79,6 +84,21 @@ public class Factura implements Serializable {
      */
     @Column(name = "pais_Envio")
     private String paisEnvio;
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_Banco", nullable = false, referencedColumnName = "idBanco")
+    /*Relacion muchos a uno con la tabla Banco*/
+    private BancoEntity banco;
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_Franquicia", nullable = false, referencedColumnName = "idFranquicia")
+    /*Relacion muchos a uno con la tabla Franquicia*/
+    private FranquiciaEntity franquicia;
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_TipoPago", nullable = false, referencedColumnName = "idTipoPago")
+    /*Relacion muchos a uno con la tabla TipoPago*/
+    private TipoPagoEntity tipoPago;
 
     public Long getIdFactura() {
         return idFactura;
@@ -176,5 +196,28 @@ public class Factura implements Serializable {
         this.paisEnvio = paisEnvio;
     }
 
-    
+    public BancoEntity getBanco() {
+        return banco;
+    }
+
+    public void setBanco(BancoEntity banco) {
+        this.banco = banco;
+    }
+
+    public FranquiciaEntity getFranquicia() {
+        return franquicia;
+    }
+
+    public void setFranquicia(FranquiciaEntity franquicia) {
+        this.franquicia = franquicia;
+    }
+
+    public TipoPagoEntity getTipoPago() {
+        return tipoPago;
+    }
+
+    public void setTipoPago(TipoPagoEntity tipoPago) {
+        this.tipoPago = tipoPago;
+    }
+
 }
