@@ -125,14 +125,6 @@ public class ProveedorEntity implements Serializable {
         this.telefonoProveedor = telefonoProveedor;
     }
 
-    public String getUrlChat() {
-        return urlChat;
-    }
-
-    public void setUrlChat(String urlChat) {
-        this.urlChat = urlChat;
-    }
-
     public String getDireccionAtencion() {
         return direccionAtencion;
     }
