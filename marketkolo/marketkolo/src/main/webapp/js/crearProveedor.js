@@ -65,35 +65,35 @@
         });
     } else {
         //Codigo de crear        
-        $('#crearButton').click(function (event) {
+        $('#crearProveedor').click(function (event) {
             console.log("Crear");
-            console.log($('#idtipoDocumento').val());
-            var documento = $('#numeroDocumento').val();
-            var idtipoDocumento = $('#idtipoDocumento').val();
-            var nombres = $('#nombres').val();
-            var apellidos = $('#apellidos').val();
-            var correo = $('#correo').val();
-            var direccion = $('#direccion').val();
-            var telefono = $('#telefono').val();
-            var clave = $('#clave').val();
+//            console.log($('#idtipoDocumento').val());
+            var nit = $('#nit').val();
+            var nombreProveedor = $('#nombrepro').val();
+            var claveProveedor = $('#clavepro').val();
+            var telefonoProveedor = $('#telefonopro').val();
+            var direccionProveedor = $('#direccionpro').val();
+            var ventasProveedor = $('#ventasPro').val();
+            var nivelProveedor = $('#nivelpro').val();
 
             $.ajax({
-                url: '/marketkolo/api/clientes',
+                url: '/marketkolo/api/proveedores',
                 method: 'POST',
                 data: JSON.stringify({
-                    documento: documento,
-                    nombres: nombres,
-                    apellidos: apellidos,
-                    telefono: telefono,
-                    correo: correo,
-                    clave: clave,
-                    direccion: direccion,
-                    tipoDocumentodto: {idTipoDocumento: idtipoDocumento}
+                    nitProveedor: nit,
+                    nombreProveedor: nombreProveedor,
+                    claveProveedor: claveProveedor,
+                    telefonoProveedor: telefonoProveedor,
+                    direccionAtencion: direccionProveedor,
+                    ventasProveedor: ventasProveedor,
+                    nivelReputacion: nivelProveedor
+
                 }),
                 contentType: 'application/json',
                 dataType: 'json'
             }).done(function (data) {
-                window.location.href = '/marketkolo';
+                alertify.success('Proveedor creado');
+                window.location.href = '/marketkolo/inicioSesion.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

@@ -43,10 +43,6 @@ public class ProveedorDTO {
      */
     private int telefonoProveedor;
     /**
-     * url del chat con el Proveedor
-     */
-    private String urlChat;
-    /**
      * direccion donde el Proveedor brinda servicio a sus clientes
      */
     private String direccionAtencion;
@@ -63,7 +59,6 @@ public class ProveedorDTO {
         this.ventasProveedor = proveedor.getVentasProveedor();
         this.nivelReputacion = proveedor.getNivelReputacion();
         this.telefonoProveedor = proveedor.getTelefonoProveedor();
-        this.urlChat = proveedor.getUrlChat();
         this.direccionAtencion = proveedor.getDireccionAtencion();
     }
 
@@ -77,7 +72,6 @@ public class ProveedorDTO {
         proveedor.setVentasProveedor(this.ventasProveedor);
         proveedor.setNivelReputacion(this.nivelReputacion);
         proveedor.setTelefonoProveedor(this.telefonoProveedor);
-        proveedor.setUrlChat(this.urlChat);
         proveedor.setDireccionAtencion(this.direccionAtencion);
         return proveedor;
     }
@@ -152,14 +146,6 @@ public class ProveedorDTO {
 
     public void setTelefonoProveedor(int telefonoProveedor) {
         this.telefonoProveedor = telefonoProveedor;
-    }
-
-    public String getUrlChat() {
-        return urlChat;
-    }
-
-    public void setUrlChat(String urlChat) {
-        this.urlChat = urlChat;
     }
 
     public String getDireccionAtencion() {

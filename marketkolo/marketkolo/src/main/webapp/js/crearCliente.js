@@ -30,7 +30,7 @@
             var clave = $('#clave').val(data.clave);
 
 
-            $('#crearButton').text('Actualizar Cliente').click(function (event) {
+            $('#crearCliente').text('Actualizar Cliente').click(function (event) {
                 var idtipoDocumento = $('#idtipoDocumento').val();
                 var documento = $('#numeroDocumento').val();
                 var nombres = $('#nombres').val();
@@ -65,7 +65,7 @@
         });
     } else {
         //Codigo de crear        
-        $('#crearButton').click(function (event) {
+        $('#crearCliente').click(function (event) {
             console.log("Crear");
             console.log($('#idtipoDocumento').val());
             var documento = $('#numeroDocumento').val();
@@ -93,7 +93,8 @@
                 contentType: 'application/json',
                 dataType: 'json'
             }).done(function (data) {
-                window.location.href = '/marketkolo';
+                alertify.success('Cliente creado');
+                window.location.href = '/marketkolo/inicioSesion.html';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
