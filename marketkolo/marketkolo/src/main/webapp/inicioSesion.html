@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MarketPlace KoLo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Cargue de archivos general de la aplicación -->
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />   
+        <link href="./css/Menustyle.css" rel="stylesheet" type="text/css" />  
+        <script src="./js/vendor/jquery-2.2.4.js"></script>        
+        <script src="./js/vendor/bootstrap.js"></script>        
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href=""><b>MarketPlace KoLo</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i>  Inicio</a>
+                    </li>
+                    <li class="nav-item">                        
+                        <a class="nav-link" href="#"><i class="fa fa-product-hunt fa-2x" aria-hidden="true"></i>roductos</a>                        
+                    </li>
+
+                </ul>                    
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="inicioSesion.html"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>  Ingreso y Registro</a>
+                    </li>               
+                    <li class="nav-item">
+                        <div id="desconectar">
+                        <a class="nav-link" id="numDocumento" href="#"><i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>  Desconectado</a>
+                        </div>
+                    </li>                                             
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #5bc0de;" href="#"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>  Carrito</a> 
+                    </li>
+                </ul>                
+            </div>
+        </nav><br>
+                        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <div class="container">    
+                        <div id="logincli" class="mainbox col-md-6 col-md-12 col-sm-8 col-sm-offset-2">                   
+                            <div class="panel-info">
+                                <div class="alert alert-dismissible alert-info">Acceso cliente:</div>
+                            </div>    
+                            <div style="padding-top:30px" class="panel-body" >
+
+                                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                                <form id="loginform" class="form-horizontal" role="form">
+
+                                    <div style="margin-bottom: 20px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input id="usuario" type="text" class="form-control" name="username" value="" placeholder="# Documento">                                        
+                                    </div>
+
+                                    <div style="margin-bottom: 20px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                                    </div>
+                                    <div style=" margin-bottom: 10px" >  
+                                        <div id="conectar">
+                                            <a  href="#" class="btn btn-info btn-sm">Ingresar</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 control">
+                                            <div style="border-top: 1px solid#888; padding-top:10px; font-size:86%" >
+                                                No tienes una cuenta?
+                                                <a href="#" onClick="$('#logincli').hide(); $('#signupcli').show()">
+                                                    Registrate como Cliente
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </form>     
+                            </div>                    
+                        </div>
+                        <div id="signupcli" style="display:none" class="mainbox col-md-12">
+
+
+                            <div class="panel-info">
+                                <div class="alert alert-dismissible alert-info">Registro cliente:</div>
+                            </div>  
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupcli').hide(); $('#logincli').show()">Ingresar</a></div>
+
+                            <div class="panel-body" >
+
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                <div class="form-group" id="TiposDocumentos">
+                                    <label class="control-label">Tipo de documento</label>
+                                    <select name="idtipoDocumento" id="idtipoDocumento" class="form-control">                       
+                                    </select>
+                                </div>
+                                <div class="form-group">                                     
+                                    <input type="number" class="form-control" id="numeroDocumento" placeholder="# Documento">                                        
+                                </div>
+                                <div class="form-group">                                                                      
+                                    <input type="text" class="form-control" id="nombres" placeholder="Nombres">                                      
+                                </div>
+                                <div class="form-group">                                        
+                                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">                                     
+                                </div>
+                                <div class="form-group">                                        
+                                    <input type="text" class="form-control" id="clave" placeholder="Contraseña">                                     
+                                </div>
+                                <div class="form-group">                                                                                
+                                    <input type="email" class="form-control" id="correo" placeholder="Correo">                                      
+                                </div>
+                                <div class="form-group">                                       
+                                    <input type="number" class="form-control" id="telefono" placeholder="# Telefono">                                      
+                                </div>
+                                <div class="form-group">                                       
+                                    <input type="text" class="form-control" id="direccion" placeholder="Direccion envio">                                      
+                                </div>                                   
+                                <button id="crearButton" class="btn btn-info btn-sm"><i class="fa fa-hand-peace-o"></i> Crear Cliente</button>                                       
+                            </div>
+                        </div> 
+                    </div>                
+                </div>   
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <div class="container">    
+                        <div id="loginpro" class="mainbox col-md-6 col-md-12 col-sm-8 col-sm-offset-2">                   
+                            <div class="panel-info">
+                                <div class="alert alert-dismissible alert-success">Acceso Proveedor:</div>
+                            </div>    
+                            <div style="padding-top:30px" class="panel-body" >
+
+                                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                                <form id="loginform" class="form-horizontal" role="form">
+
+                                    <div style="margin-bottom: 20px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="# Nit">                                        
+                                    </div>
+
+                                    <div style="margin-bottom: 20px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                                    </div>
+                                    <div style=" margin-bottom: 10px" >  
+                                        <div class="controls">
+                                            <a id="btn-login" href="#" class="btn btn-success btn-sm">Ingresar</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 control">
+                                            <div style="border-top: 1px solid#888; padding-top:10px; font-size:86%" >
+                                                No tienes una cuenta?
+                                                <a href="#" onClick="$('#loginpro').hide(); $('#signupro').show()">
+                                                    Registrate como Proveedor
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </form>     
+                            </div>                    
+
+                        </div>
+
+                    </div>                
+                </div>   
+            </div>
+
+            <div class="col-md-3"></div>
+
+        </div><br><br>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-5">         
+                <center><h2>Clientes Registrados</h2></center><br>
+                <div id="tableClientes">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                        <th>#</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>                        
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>                
+            </div>
+            <div class="col-md-5">         
+                <center><h2>Proveedores Registrados</h2></center><br>
+                <div id="tableClientes">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                        <th>#</th>                        
+                        <th>Nombre</th>                        
+                        <th>Reputación</th>                        
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>                
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>   
+        <script src="./js/cliente.js"></script>
+        <script src="./js/tipodocumento.js"></script>   
+        <script src="./js/crearCliente.js"></script>
+        <script src="./js/ejemploInicio.js"></script>
+    </body>
+</html>

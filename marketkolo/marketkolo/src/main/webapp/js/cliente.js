@@ -9,6 +9,8 @@
            for(var i=0; i<data.length; i++){
                var tableRow = $('<tr>');
                //Td Table divition
+               var numCliente = $('<td>');
+               numCliente.text(i+1);
                var nombresCliente = $('<td>');
                nombresCliente.text(data[i].nombres);
                var apellidosCliente = $('<td>');
@@ -29,15 +31,12 @@
                var botonActualizar = $('<a href="/marketkolo/crearCliente.html?id='+ data[i].id +'">').addClass('btn btn-info');
                botonActualizar.text('Actualizar');               
                botonEliminar.click(eliminar);               
-               acciones.append(botonEliminar);
-               acciones.append(botonActualizar);               
+//               acciones.append(botonEliminar);
+//               acciones.append(botonActualizar);               
                //Agregar las columnas a la fila
+               tableRow.append(numCliente);
                tableRow.append(nombresCliente);
-               tableRow.append(apellidosCliente);
-               tableRow.append(telefonoCliente);
-               tableRow.append(correoCliente);               
-               tableRow.append(direccionCliente);               
-               tableRow.append(acciones);               
+               tableRow.append(apellidosCliente);               
                $('#tableClientes table tbody').append(tableRow);
            }
            console.log(data);
