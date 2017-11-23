@@ -56,11 +56,6 @@ public class ProveedorEntity implements Serializable {
     @Column(name = "telefono_Proveedor")
     private int telefonoProveedor;
     /**
-     * url del chat con el Proveedor
-     */
-    @Column(name = "url_Chat")
-    private String urlChat;
-    /**
      * direccion donde el Proveedor brinda servicio a sus clientes
      */
     @Column(name = "direccion_Atencion")

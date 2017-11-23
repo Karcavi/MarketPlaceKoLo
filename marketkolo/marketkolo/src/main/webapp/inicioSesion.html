@@ -7,8 +7,15 @@
         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />   
         <link href="./css/Menustyle.css" rel="stylesheet" type="text/css" />  
+        <link rel='stylesheet' href='./js/alertify/css/alertify.css' type="text/css">
+        <link rel='stylesheet' href='./js/alertify/css/themes/default.css' type="text/css">
         <script src="./js/vendor/jquery-2.2.4.js"></script>        
         <script src="./js/vendor/bootstrap.js"></script>        
+        <script>
+            if (sessionStorage.getItem("NombreUsuario") != null) {
+                window.location.href = '/marketkolo';
+            }
+        </script>        
     </head>
 
     <body>
@@ -28,21 +35,18 @@
 
                 </ul>                    
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="inicioSesion.html"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>  Ingreso y Registro</a>
+                    <li class="nav-item active" id="IniSes">
+                        <a class="nav-link"  href="inicioSesion.html"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>  Ingreso y Registro</a>
                     </li>               
                     <li class="nav-item">
-                        <div id="desconectar">
-                        <a class="nav-link" id="numDocumento" href="#"><i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>  Desconectado</a>
+                        <div id="desconectar" style="margin-top: 3px;">
+                            <a class="nav-link" id="numDocumento" href="#"><i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>  Desconectado</a>
                         </div>
-                    </li>                                             
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #5bc0de;" href="#"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>  Carrito</a> 
-                    </li>
+                    </li>                                                              
                 </ul>                
             </div>
         </nav><br>
-                        
+
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-3">
@@ -60,21 +64,21 @@
 
                                     <div style="margin-bottom: 20px" class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <input id="usuario" type="text" class="form-control" name="username" value="" placeholder="# Documento">                                        
+                                        <input id="usuariocli" type="text" class="form-control" name="username" value="" placeholder="# Documento">                                        
                                     </div>
 
                                     <div style="margin-bottom: 20px" class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                                        <input id="clavecli" type="password" class="form-control" name="password" placeholder="Contraseña">
                                     </div>
                                     <div style=" margin-bottom: 10px" >  
-                                        <div id="conectar">
+                                        <div id="conectarcli">
                                             <a  href="#" class="btn btn-info btn-sm">Ingresar</a>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12 control">
-                                            <div style="border-top: 1px solid#888; padding-top:10px; font-size:86%" >
+                                            <div style="border-top: 1px solid#888; padding-top:12px; font-size:87%" >
                                                 No tienes una cuenta?
                                                 <a href="#" onClick="$('#logincli').hide(); $('#signupcli').show()">
                                                     Registrate como Cliente
@@ -86,12 +90,10 @@
                             </div>                    
                         </div>
                         <div id="signupcli" style="display:none" class="mainbox col-md-12">
-
-
                             <div class="panel-info">
                                 <div class="alert alert-dismissible alert-info">Registro cliente:</div>
                             </div>  
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupcli').hide(); $('#logincli').show()">Ingresar</a></div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupcli').hide(); $('#logincli').show()">Iniciar Sesion</a></div>
 
                             <div class="panel-body" >
 
@@ -160,7 +162,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12 control">
-                                            <div style="border-top: 1px solid#888; padding-top:10px; font-size:86%" >
+                                            <div style="border-top: 1px solid#888; padding-top:12px; font-size:87%" >
                                                 No tienes una cuenta?
                                                 <a href="#" onClick="$('#loginpro').hide(); $('#signupro').show()">
                                                     Registrate como Proveedor
@@ -169,10 +171,43 @@
                                         </div>
                                     </div>    
                                 </form>     
-                            </div>                    
-
+                            </div>                           
                         </div>
-
+                        <div id="signupro" style="display:none" class="mainbox col-md-12">
+                            <div class="panel-info">
+                                <div class="alert alert-dismissible alert-success">Registro Proveedor:</div>
+                            </div>  
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupro').hide(); $('#loginpro').show()">Iniciar Sesion</a></div>
+                            <div class="panel-body" >
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                <div class="form-group">                                     
+                                    <input type="number" class="form-control" id="nit" placeholder="# Nit">                                        
+                                </div>
+                                <div class="form-group">                                                                      
+                                    <input type="text" class="form-control" id="nombrepro" placeholder="Nombre">                                      
+                                </div>
+                                <div class="form-group">                                        
+                                    <input type="text" class="form-control" id="clavepro" placeholder="Contraseña">                                     
+                                </div>
+                                <div class="form-group">                                        
+                                    <input type="text" class="form-control" id="telefonopro" placeholder="# Telefono">                                     
+                                </div>
+                                <div class="form-group">                                                                                
+                                    <input type="text" class="form-control" id="direccionpro" placeholder="Direccion atencion">                                      
+                                </div>
+                                <div class="form-group">                                       
+                                    <input type="number" class="form-control" id="telefono" placeholder="# Ventas anuales">                                      
+                                </div>
+                                <div class="form-group">    
+                                    <label>Nivel de repuracion <strong>(1-10)</strong></label>
+                                    <input type="number" class="form-control" id="direccion" placeholder="Nivel de reputacion">                                      
+                                </div>                                   
+                                <button id="crearButton" class="btn btn-success btn-sm"><i class="fa fa-hand-peace-o"></i> Crear Proveedor</button>                                       
+                            </div>
+                        </div> 
                     </div>                
                 </div>   
             </div>
@@ -198,7 +233,7 @@
             </div>
             <div class="col-md-5">         
                 <center><h2>Proveedores Registrados</h2></center><br>
-                <div id="tableClientes">
+                <div id="tableProveedores">
                     <table class="table table-striped table-bordered">
                         <thead>
                         <th>#</th>                        
@@ -215,6 +250,7 @@
         <script src="./js/cliente.js"></script>
         <script src="./js/tipodocumento.js"></script>   
         <script src="./js/crearCliente.js"></script>
-        <script src="./js/ejemploInicio.js"></script>
+        <script src="./js/validarCliente.js"></script>
+        <script src="./js/alertify/alertify.min.js"></script>
     </body>
 </html>
