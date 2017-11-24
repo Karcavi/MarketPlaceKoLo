@@ -1,28 +1,28 @@
 (function ($) {
     $(document).ready(function () {
         $.ajax({
-            url: '/marketkolo/api/clientes',
+            url: '/marketkolo/api/proveedores',
             method: 'GET',
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
 
 //funcion conectar
-            $('#conectarcli').on('click', function () {
+            $('#conectarpro').on('click', function () {
 //                sessionStorage.setItem("NombreUsuario", $('#usuario').val());
 //                localStorage.setItem("NombreUsuarioo", $('#usuario').val());
-                var usucli = ($('#usuariocli').val());
-                var clavecli = ($('#clavecli').val());               
+                var usupro = ($('#usuariopro').val());
+                var clavepro = ($('#clavepro').val());               
                 for (var i = 0; i < data.length; i++) {
-                    var datausu = (data[i].documento);
-                    var dataclave = (data[i].clave);
-                    if (datausu == usucli) {
-                        sessionStorage.setItem("NombreUsuario", (data[i].nombres));
-                        var usuario = sessionStorage.getItem("NombreUsuario");
-                        if (dataclave == clavecli) {                            
-                            sessionStorage.setItem("IdUsuario", (data[i].id));                            
-                            var idusuario = sessionStorage.getItem("IdUsuario");                            
-                            var clave = (data[i].clave);
+                    var datausupro = (data[i].nitProveedor);
+                    var dataclavepro = (data[i].claveProveedor);
+                    if (datausupro == usupro) {
+                        sessionStorage.setItem("NombreProveedor", (data[i].nombreProveedor));
+                        var usuario = sessionStorage.getItem("NombreProveedor");
+                        if (dataclavepro == clavepro) {                            
+                            sessionStorage.setItem("IdProveedor", (data[i].idProveedor));                            
+                            var idpro = sessionStorage.getItem("IdProveedor");                            
+                            var claveProv = (data[i].claveProveedor);
 //                        var usuarioo = localStorage.getItem("NombreUsuarioo");                        
                             alertify.success('Usuario conectado');
                             document.getElementById("IniSes").innerHTML = "<a class='nav-link'  href='#'><i class='fa fa-unlock fa-2x' aria-hidden='true'></i> Bienvenido " + usuario + "</a>";
@@ -34,7 +34,7 @@
                 if (usuario == null) {
                     alertify.warning('El usuario no existe');
                 }
-                if (clave == null) {
+                if (claveProv == null) {
                     alertify.warning('La contraseña no es correcta');
                 }
 
@@ -45,11 +45,11 @@
 
 //funcion desconectar
             $('#desconectar').on('click', function () {
-                var usuario = sessionStorage.getItem("NombreUsuario");
-                sessionStorage.removeItem("IdUsuario");
+                var usupro = sessionStorage.getItem("NombreProveedor");
+                sessionStorage.removeItem("IdProveedor");
 //                var usuarioo = localStorage.getItem("NombreUsuarioo");
-                if (usuario != null) {
-                    sessionStorage.removeItem("NombreUsuario");
+                if (usupro != null) {
+                    sessionStorage.removeItem("NombreProveedor");
 //                    localStorage.removeItem("NombreUsuarioo");
                     document.getElementById("numDocumento").innerHTML = "<i class='fa fa-hand-o-right fa-2x' aria-hidden='true'></i>  Desconectado";
 //                    alertify.warning('Usuario cerrado');
@@ -67,7 +67,7 @@
         });
     });
 
-    $(document).ready(function () {
+   $(document).ready(function () {
 
         var usuario = sessionStorage.getItem("NombreUsuario");
         var usupro = sessionStorage.getItem("NombreProveedor");

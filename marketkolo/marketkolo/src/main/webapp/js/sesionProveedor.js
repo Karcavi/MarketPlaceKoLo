@@ -1,12 +1,11 @@
 (function ($) {
 
     $(document).ready(function () {
-        var usuario = sessionStorage.getItem("NombreUsuario");
-        var idusuario = sessionStorage.getItem("IdUsuario");
-        console.log(idusuario);
-        if (usuario != null) {
-            document.getElementById("Carro").innerHTML = "<a class='nav-link' style='color: #5bc0de;' href='#'><i class='fa fa-shopping-cart fa-2x' aria-hidden='true'></i>  Carrito</a> ";
-            document.getElementById("IniSes").innerHTML = "<a class='nav-link'  href='#'><i class='fa fa-unlock fa-2x' aria-hidden='true'></i>  Bienvenido " + usuario + "</a>";
+        var usupro = sessionStorage.getItem("NombreProveedor");
+        var idusuariopro = sessionStorage.getItem("IdProveedor");
+        console.log(idusuariopro);
+        if (usupro != null) {
+            document.getElementById("IniSes").innerHTML = "<a class='nav-link'  href='#'><i class='fa fa-unlock fa-2x' aria-hidden='true'></i>  Bienvenido " + usupro + "</a>";
             document.getElementById("numDocumento").innerHTML = "<i class='fa fa-hand-o-right fa-2x' aria-hidden='true'></i>  Desconectar";
 //            alertify.success('Usuario conectado');
 //          alertify.success('Usuario '+usuario); 
@@ -18,12 +17,11 @@
 
 //funcion desconectar
             $('#desconectar').on('click', function () {
-                var usuario = sessionStorage.getItem("NombreUsuario");
-                ;
+                var usupro = sessionStorage.getItem("NombreProveedor");
+                sessionStorage.removeItem("IdProveedor");
 //                var usuarioo = localStorage.getItem("NombreUsuarioo");
-                if (usuario != null ) {
-                    sessionStorage.removeItem("NombreUsuario");
-                    sessionStorage.removeItem("IdUsuario");
+                if (usupro != null) {
+                    sessionStorage.removeItem("NombreProveedor");
 //                    localStorage.removeItem("NombreUsuarioo");
                     document.getElementById("numDocumento").innerHTML = "<i class='fa fa-hand-o-right fa-2x' aria-hidden='true'></i>  Desconectado";
 //                    alertify.warning('Usuario cerrado');
