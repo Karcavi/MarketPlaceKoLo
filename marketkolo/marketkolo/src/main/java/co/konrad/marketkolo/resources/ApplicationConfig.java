@@ -20,6 +20,7 @@ public class ApplicationConfig extends Application {
     
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.konrad.marketkolo.resources.ClienteResource.class);
+        resources.add(co.konrad.marketkolo.resources.ProductoResource.class);
         resources.add(co.konrad.marketkolo.resources.ProveedorResource.class);
         resources.add(co.konrad.marketkolo.resources.TipoDocumentoResource.class);
     }
