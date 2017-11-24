@@ -62,5 +62,40 @@ public class PromocionDTO {
         }
         return listaPromociones;
         }
+
+    public Long getIdPromocion() {
+        return idPromocion;
+    }
+
+    public void setIdPromocion(Long idPromocion) {
+        this.idPromocion = idPromocion;
+    }
+
+    public int getPrecioOferta() {
+        return precioOferta;
+    }
+
+    public void setPrecioOferta(int precioOferta) {
+        this.precioOferta = precioOferta;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+      
+      
+      
       
 }

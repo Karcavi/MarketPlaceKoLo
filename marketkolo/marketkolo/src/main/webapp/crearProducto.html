@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MarketPlace KoLo - Crear Producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="./js/vendor/jquery-2.2.4.js"></script>        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><b>MarketPlace KoLo</b></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Productos<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Clientes</a></li>
+                        <li><a href="#">Proveedores</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="col-md-3"><br><br>
+            <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
+        </div>
+        <div class="col-md-8">
+            <center><h2>Formulario Producto:</h2></center><br>            
+            <div class="form-group" id="idProducto">
+                <label class="control-label">ID de producto</label>
+                <select name="idProducto" id="idProducto" class="form-control">                       
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre de producto</label>                                                    
+                <input class="form-control" id="nombreProducto"  type="text" placeholder="Ingresar el nombre del producto a crear">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Valor unitario</label>
+                <input class="form-control" id="valorUnitario" type="number" placeholder="Ingresar el valor unitario del producto">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Marca Producto</label>
+                <input class="form-control" id="marcaProducto" type="text" placeholder="Ingresar la marca del producto">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Garantía del producto</label>
+                <input class="form-control" id="garantiaProducto"  type="text" placeholder="Ingresar la garantía del producto en días">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Número de unidades disponibles del producto</label>
+                <input class="form-control" id="stockProducto"  type="number" placeholder="Ingresar la cantidad de unidades disponibles">
+            </div>
+            <div class="form-group">
+                <label class="control-label">URL de la imagen del producto</label>
+                <input class="form-control" id="imagenProducto"  type="number" placeholder="Ingresar la ruta donde se encuentra la imagen del producto">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Contraseña</label>
+                <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
+            </div>
+
+            <center><button id="crearButton" class="btn btn-primary">Crear Cliente</button></center><br><br>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <script src="./js/crearCliente.js"></script>
+        <script src="./js/tipodocumento.js"></script>
+    </body>
+</html>
