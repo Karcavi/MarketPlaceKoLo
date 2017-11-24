@@ -140,6 +140,14 @@ public class ProductoEntity implements Serializable {
     public void setCategoria(CategoriaEntity categoria) {
         this.categoria = categoria;
     }
+
+    public PromocionEntity getPromocion() {
+        return promocion;
+    }
+
+    public void setPromocion(PromocionEntity promocion) {
+        this.promocion = promocion;
+    }
     
     
 }
