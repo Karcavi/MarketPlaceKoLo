@@ -209,6 +209,4 @@ public class ProductoDTO {
         this.promociondto = promociondto;
     }
     
-    
-    
 }
