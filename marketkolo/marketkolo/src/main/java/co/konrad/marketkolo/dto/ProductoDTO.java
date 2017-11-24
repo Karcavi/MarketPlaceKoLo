@@ -19,6 +19,11 @@ public class ProductoDTO {
      */
     private Long idProducto;
     
+     /**
+     * Nombre del Producto
+     */
+    private String nombreProducto;
+    
     /**
      * Valor del Producto
      */
@@ -143,6 +148,14 @@ public class ProductoDTO {
 
     public void setIdProducto(Long idProducto) {
         this.idProducto = idProducto;
+    }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     public int getValorUnitario() {

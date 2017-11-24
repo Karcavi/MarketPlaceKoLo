@@ -49,7 +49,7 @@ public class ProductoEntity implements Serializable {
     @Column(name = "stock_Producto")
     private int stockProducto;
     /**
-     * Imagen del Prodcuto en venta
+     * Imagen del Producto en venta
      */
     @Column(name = "imagen_Producto")
     private String imagenProducto;
@@ -148,6 +148,4 @@ public class ProductoEntity implements Serializable {
     public void setPromocion(PromocionEntity promocion) {
         this.promocion = promocion;
     }
-    
-    
 }
