@@ -10,11 +10,10 @@
                 //Td Table divition
                 
                 var Producto = $('<tr>');
-                Producto.html('<td align="center"><div class="card-body"><h6 class="card-subtitle">' + data[i].nombreProducto + '</h6></div><img style="height: 100px; width: 150px; display: block;" src="' + data[i].imagenProducto + '" alt="Card image"><div class="card-body"><p class="card-text">$' + data[i].valorUnitario + '</p></div></div></td>');
+                Producto.html('<td align="center"><div class="card-body"><h6 class="card-subtitle">' + data[i].nombreProducto + '</h6></div><img style="height: 100px; width: 150px; display: block;" src="' + data[i].imagenProducto + '" alt="Card image"><div class="card-body"><p class="card-text">$' + data[i].valorUnitario + '</p></div>');
                 var Comprar = $('<button>').addClass('btn btn-info');;
                 Comprar.text('Comprar').attr('producto', data[i]);
                 Comprar.click(comprarProducto);  
-
                 $('#tableProductos table tbody').append(Producto, Comprar);
             }
 
