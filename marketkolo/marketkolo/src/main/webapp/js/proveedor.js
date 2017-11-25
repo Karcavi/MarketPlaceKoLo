@@ -51,6 +51,7 @@
        }).fail(function(xhr,status, error){
            console.log(error);
        });
-   }
+   }               
+   
 })(jQuery);
 

@@ -70,6 +70,7 @@ public class ProductoDTO {
      */
     public ProductoDTO(ProductoEntity producto) {
         this.idProducto = producto.getIdProducto();
+        this.nombreProducto = producto.getNombreProducto();
         this.valorUnitario = producto.getValorUnitario();
         this.marcaProducto = producto.getMarcaProducto();
         this.garantiaProducto = producto.getGarantiaProducto();
@@ -104,6 +105,7 @@ public class ProductoDTO {
     public ProductoEntity toEntity() {
         ProductoEntity producto = new ProductoEntity();
         producto.setIdProducto(this.idProducto);
+        producto.setNombreProducto(this.nombreProducto);
         producto.setValorUnitario(this.valorUnitario);
         producto.setMarcaProducto(this.marcaProducto);
         producto.setGarantiaProducto(this.garantiaProducto);
@@ -141,6 +143,7 @@ public class ProductoDTO {
     
     
     /*Getters y setters*/
+    
 
     public Long getIdProducto() {
         return idProducto;
@@ -221,5 +224,6 @@ public class ProductoDTO {
     public void setPromociondto(PromocionDTO promociondto) {
         this.promociondto = promociondto;
     }
+    
     
 }

@@ -37,8 +37,11 @@
                tableRow.append(numCliente);
                tableRow.append(nombresCliente);
                tableRow.append(apellidosCliente);               
+//               tableRow.append(acciones);               
                $('#tableClientes table tbody').append(tableRow);
+               
            }
+           
            console.log(data);
       }).fail(function(xhr, status, error){
          console.log(error); 
@@ -58,5 +61,6 @@
            console.log(error);
        });
    }
+   
 })(jQuery);
 
