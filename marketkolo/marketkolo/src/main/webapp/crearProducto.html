@@ -2,77 +2,103 @@
 <html>
     <head>
         <title>MarketPlace KoLo - Crear Producto</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Cargue de archivos general de la aplicación -->
         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="./js/vendor/jquery-2.2.4.js"></script>        
+        <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />  
+        <link href="./css/Menustyle.css" rel="stylesheet" type="text/css" /> 
+        <link rel='stylesheet' href='./js/alertify/css/alertify.css' type="text/css">
+        <link rel='stylesheet' href='./js/alertify/css/themes/default.css' type="text/css">
+        <link rel="stylesheet" type="text/css" href="TableFilter/filtergrid.css">          
+        <script src="./js/vendor/jquery-2.2.4.js"></script>                                                 
+        <script src="./js/vendor/bootstrap.js"></script>                                                                                    
+        <script src="./TableFilter/tablefilter_all_min.js"></script>          
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><b>MarketPlace KoLo</b></a>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href=""><b>MarketPlace KoLo</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i>  Inicio</a>
+                    </li>
+                    <li class="nav-item  active">                        
+                        <a class="nav-link" href="productos.html"><i class="fa fa-product-hunt fa-2x" aria-hidden="true"></i>roductos</a>                        
+                    </li>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Productos<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Clientes</a></li>
-                        <li><a href="#">Proveedores</a></li>
-                    </ul>
+                </ul>                    
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" id="IniSes">
+                        <a class="nav-link"  href="inicioSesion.html"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>  Ingreso y Registro</a>
+                    </li>               
+                    <li class="nav-item">
+                        <div id="desconectar" style="margin-top: 3px;">
+                            <a class="nav-link" id="numDocumento" href="#"><i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>  Desconectado</a>
+                        </div>
+                    </li>                                             
+                    <li class="nav-item" id="Carro">
+
+                    </li>
+                </ul>                
+            </div>
+        </nav><br><br>
+        <div class="row">
+            <div class="col-md-3"><br><br>
+                <center><a href="productos.html" class="btn btn-success">Volver</a></center>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="jumbotron col-md-10">  
+                        <div id="logincli" class="mainbox col-md-6 col-md-12 col-sm-8 col-sm-offset-2">                   
+                            <div class="panel-info">
+                                <div class="alert alert-dismissible alert-success"><h5>Formulario Producto:</h5></div>     
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Nombre de producto</label>                                                    
+                                <input class="form-control" id="nombreProducto"  type="text" placeholder="Ingresar el nombre del producto a crear">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Valor unitario</label>
+                                <input class="form-control" id="valorUnitario" type="number" placeholder="Ingresar el valor unitario del producto">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Marca Producto</label>
+                                <input class="form-control" id="marcaProducto" type="text" placeholder="Ingresar la marca del producto">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Garantía del producto</label>
+                                <input class="form-control" id="garantiaProducto"  type="text" placeholder="Ingresar la garantía del producto en días">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Número de unidades disponibles del producto</label>
+                                <input class="form-control" id="stockProducto"  type="number" placeholder="Ingresar la cantidad de unidades disponibles">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">URL de la imagen del producto</label>
+                                <input class="form-control" id="imagenProducto"  type="number" placeholder="Ingresar la ruta donde se encuentra la imagen del producto">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Contraseña</label>
+                                <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
+                            </div>
+                            <center><button id="crearButton" class="btn btn-success">Crear Producto</button></center><br><br>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>               
                 </div>
             </div>
-        </nav>
-        <div class="col-md-3"><br><br>
-            <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
-        </div>
-        <div class="col-md-8">
-            <center><h2>Formulario Producto:</h2></center><br>            
-            <div class="form-group" id="idProducto">
-                <label class="control-label">ID de producto</label>
-                <select name="idProducto" id="idProducto" class="form-control">                       
-                </select>
+            <div class="col-md-3">
             </div>
-            <div class="form-group">
-                <label class="control-label">Nombre de producto</label>                                                    
-                <input class="form-control" id="nombreProducto"  type="text" placeholder="Ingresar el nombre del producto a crear">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Valor unitario</label>
-                <input class="form-control" id="valorUnitario" type="number" placeholder="Ingresar el valor unitario del producto">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Marca Producto</label>
-                <input class="form-control" id="marcaProducto" type="text" placeholder="Ingresar la marca del producto">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Garantía del producto</label>
-                <input class="form-control" id="garantiaProducto"  type="text" placeholder="Ingresar la garantía del producto en días">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Número de unidades disponibles del producto</label>
-                <input class="form-control" id="stockProducto"  type="number" placeholder="Ingresar la cantidad de unidades disponibles">
-            </div>
-            <div class="form-group">
-                <label class="control-label">URL de la imagen del producto</label>
-                <input class="form-control" id="imagenProducto"  type="number" placeholder="Ingresar la ruta donde se encuentra la imagen del producto">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Contraseña</label>
-                <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
-            </div>
-
-            <center><button id="crearButton" class="btn btn-primary">Crear Producto</button></center><br><br>
-        </div>
-        <div class="col-md-1">
         </div>
         <script src="./js/crearProducto.js"></script>
+        <script src="./js/sesionCliente.js"></script>
+        <script src="./js/sesionProveedor.js"></script>
+        <script src="./js/alertify/alertify.min.js"></script>
+        <script src="./js/productos.js"></script> 
         <!--<script src="./js/tipodocumento.js"></script>-->
     </body>
 </html>

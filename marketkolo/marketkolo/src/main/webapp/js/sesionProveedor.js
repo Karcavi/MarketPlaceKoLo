@@ -7,6 +7,7 @@
         if (usupro != null) {
             document.getElementById("IniSes").innerHTML = "<a class='nav-link'  href='#'><i class='fa fa-unlock fa-2x' aria-hidden='true'></i>  Bienvenido " + usupro + "</a>";
             document.getElementById("numDocumento").innerHTML = "<i class='fa fa-hand-o-right fa-2x' aria-hidden='true'></i>  Desconectar";
+            document.getElementById("crearProducto").innerHTML = '<center><a href="crearProducto.html" class="button btn btn-success">Crear Producto</a></center>';
 //            alertify.success('Usuario conectado');
 //          alertify.success('Usuario '+usuario); 
         } else {
