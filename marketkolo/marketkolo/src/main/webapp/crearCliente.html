@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MarketPlace KoLo - Crear Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="./js/vendor/jquery-2.2.4.js"></script>        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><b>MarketPlace KoLo</b></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Clientes<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Proveedores</a></li>
+                        <li><a href="#">Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="col-md-3"><br><br>
+            <center><input type="button" name="edit" value="Volver" class="btn btn-info" id="button" onclick="location.href = 'index.html';"></center>
+        </div>
+        <div class="col-md-8">
+            <center><h2>Formulario Cliente:</h2></center><br>            
+            <div class="form-group" id="TiposDocumentos">
+                <label class="control-label">Tipo de documento</label>
+                <select name="idtipoDocumento" id="idtipoDocumento" class="form-control">                       
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Numero de Documento</label>                                                    
+                <input class="form-control" id="numeroDocumento"  type="number" placeholder="Ingresar el número de documento de identidad">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombres</label>
+                <input class="form-control" id="nombres" type="text" placeholder="Ingresar tus nombres">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Apellidos</label>
+                <input class="form-control" id="apellidos" type="text" placeholder="Ingresar tus apellidos">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Correo</label>
+                <input class="form-control" id="correo"  type="text" placeholder="Ingresar un correo electronico válido">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Dirección</label>
+                <input class="form-control" id="direccion"  type="text" placeholder="Ingresar la direccion de tu residencia">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Telefono</label>
+                <input class="form-control" id="telefono"  type="number" placeholder="Ingresar un número telefonico de contacto">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Contraseña</label>
+                <input class="form-control" id="clave"  type="text" placeholder="Ingresar una contraseña">
+            </div>
+
+            <center><button id="crearButton" class="btn btn-primary">Crear Cliente</button></center><br><br>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <script src="./js/crearCliente.js"></script>
+        <script src="./js/tipodocumento.js"></script>
+    </body>
+</html>

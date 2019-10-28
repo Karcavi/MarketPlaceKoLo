@@ -1,6 +1,0 @@
-co\konrad\marketkolo\dto\ClienteDTO.class
-co\konrad\marketkolo\logic\ClienteLogic.class
-co\konrad\marketkolo\persistence\ClientePersistence.class
-co\konrad\marketkolo\resources\ClienteResource.class
-co\konrad\marketkolo\resources\ApplicationConfig.class
-co\konrad\marketkolo\entities\ClienteEntity.class
